@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "devcshort",
+      "name": "Chris Short",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/13677134?v=4",
+      "profile": "https://www.chrisrshort.com",
+      "contributions": [
+        "code",
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "react-hls",
+  "projectOwner": "devcshort",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
