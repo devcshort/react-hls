@@ -15,6 +15,6 @@ export interface ReactHlsPlayerProps extends DetailedHTMLProps<VideoHTMLAttribut
     className?: string;
 }
 
-declare const ReactHlsPlayer: React.SFC<ReactHlsPlayerProps>
+declare const ReactHlsPlayer: React.FunctionComponent<ReactHlsPlayerProps>
 
 export default ReactHlsPlayer
