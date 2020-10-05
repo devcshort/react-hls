@@ -5,7 +5,7 @@ const config = require('./webpack.config');
 
 module.exports = merge(config, {
     mode: 'development',
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     devtool: 'eval-cheap-module-source-map',
     devServer: {
         hot: true,
