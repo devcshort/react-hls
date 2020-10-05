@@ -1,16 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
 import Player from './components/react-hls-player';
 
-class Index extends React.Component {
-    constructor (props) {
+type hlsState = {
+    hlsUrl: string,
+    destroy: boolean
+}
+
+class Index extends Component<{}, hlsState> {
+    playerRef: any;
+
+    constructor(props: any) {
         super(props);
 
         this.state = {
-            hlsUrl : 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
+            hlsUrl: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
             destroy : false
-        };
+        }
 
         this.playerRef = React.createRef();
 
@@ -19,7 +26,7 @@ class Index extends React.Component {
         this._handleToggleControls = this._handleToggleControls.bind(this);
     }
 
-    _handleEnter (e) {
+    _handleEnter (e: any): void {
         if (e.keyCode === 13) {
             this.setState({
                 hlsUrl : e.target.value
@@ -27,13 +34,13 @@ class Index extends React.Component {
         }
     }
 
-    _handleDestroyClick () {
+    _handleDestroyClick (): void {
         this.setState({
             destroy : true
         });
     }
 
-    _handleToggleControls () {
+    _handleToggleControls (): void {
         if (this.playerRef.current.hasAttribute('controls')) {
             this.playerRef.current.removeAttribute('controls');
         } else {
@@ -41,7 +48,7 @@ class Index extends React.Component {
         }
     }
 
-    render () {
+    render() {
         let { hlsUrl, destroy } = this.state;
 
         return (
@@ -75,7 +82,7 @@ class Index extends React.Component {
 
                 {
                     !destroy
-                        ? <Player loop={true} width="100%" height="auto" playerRef={this.playerRef} url={hlsUrl} />
+                        ? <Player loop={true} width="100%" height="auto" playerRef={this.playerRef} url={hlsUrl} className="test" />
                         : null
                 }
 
@@ -103,4 +110,4 @@ class Index extends React.Component {
     }
 }
 
-ReactDOM.render(<Index />, document.getElementById('container'));
+render(<Index />, document.getElementById('container'));
