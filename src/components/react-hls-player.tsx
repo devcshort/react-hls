@@ -1,7 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { CSSProperties, useEffect } from 'react';
 import Hls from 'hls.js';
 
-function ReactHlsPlayer({
+type player = {
+    autoplay?: boolean;
+    controls?: boolean;
+    hlsConfig?: object;
+    videoProps?: object;
+    playerRef?: any;
+    style?: object | CSSProperties;
+    width?: string;
+    height?: string;
+    className?: string;
+    url: string
+    [x: string]: any;
+}
+
+const ReactHlsPlayer: React.FunctionComponent<player> = ({
     autoplay = false,
     controls = false,
     hlsConfig = {},
@@ -13,9 +27,9 @@ function ReactHlsPlayer({
     className,
     url,
     ...props
-}) {
+}) => {
     useEffect(() => {
-        let hls = null;
+        let hls: Hls | null = null;
 
         function _initPlayer() {
             if (hls != null) {
@@ -39,7 +53,7 @@ function ReactHlsPlayer({
                 });
             });
 
-            newHls.on(Hls.Events.ERROR, function (event, data) {
+            newHls.on(Hls.Events.ERROR, function (_event, data) {
                 if (data.fatal) {
                     switch(data.type) {
                         case Hls.ErrorTypes.NETWORK_ERROR:
