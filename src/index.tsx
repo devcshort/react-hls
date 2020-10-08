@@ -11,7 +11,7 @@ type hlsState = {
 class Index extends Component<{}, hlsState> {
     playerRef: any;
 
-    constructor(props: any) {
+    constructor(props: {} | Readonly<{}>) {
         super(props);
 
         this.state = {
