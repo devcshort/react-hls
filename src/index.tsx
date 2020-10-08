@@ -27,6 +27,7 @@ class Index extends Component<{}, hlsState> {
     }
 
     _handleEnter (e: any): void {
+        /* keyCode is deprecated, therefore it will not allow me to apply a type */
         if (e.keyCode === 13) {
             this.setState({
                 hlsUrl : e.target.value
