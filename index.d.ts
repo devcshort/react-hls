@@ -10,7 +10,7 @@ export interface ReactHlsPlayerProps extends DetailedHTMLProps<VideoHTMLAttribut
      * @deprecated All video properties can now be used from the root of the component
      */
     videoProps?: Partial<HTMLVideoElement>;
-    playerRef?: React.Ref<any>;
+    playerRef?: React.RefObject<HTMLDivElement>;
     style?: React.CSSProperties;
     className?: string;
 }
