@@ -4,8 +4,6 @@
 		"target": "esnext",
 		// path to output directory
 		"outDir": "./dist/",
-		// enable strict null checks as a best practice
-		"strictNullChecks": true,
 		// Search under node_modules for non-relative imports.
 		"moduleResolution": "node",
 		// Process & infer types from .js files.
@@ -37,6 +35,7 @@
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
 		"forceConsistentCasingInFileNames": true,
-		"importHelpers": true
+		"importHelpers": true,
+		"strictNullChecks": false
 	},
 }
