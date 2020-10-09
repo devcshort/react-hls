@@ -9,7 +9,7 @@ type hlsState = {
 }
 
 class Index extends Component<{}, hlsState> {
-    playerRef: any;
+    playerRef: React.RefObject<HTMLDivElement>;
 
     constructor(props: {} | Readonly<{}>) {
         super(props);
@@ -45,7 +45,7 @@ class Index extends Component<{}, hlsState> {
         if (this.playerRef.current.hasAttribute('controls')) {
             this.playerRef.current.removeAttribute('controls');
         } else {
-            this.playerRef.current.setAttribute('controls', true);
+            this.playerRef.current.setAttribute('controls', 'true');
         }
     }
 
